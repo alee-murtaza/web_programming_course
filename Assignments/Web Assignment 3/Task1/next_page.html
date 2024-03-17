@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #000000 50%, #2e0d60 100%);
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 300px;
+            height: 400px;
+            background-color: #9a99af;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            animation: appear 0.5s ease-in-out;
+            margin: 20px;
+            animation-fill-mode: forwards;
+
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: #2e0d60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #501992;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        form {
+            margin: 20px;
+            animation-fill-mode: forwards;
+        }
+
+        #aboutform {
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+
+        #projectsfrom {
+            animation: slideInFromRight 1s ease-in-out;
+        }
+
+        #contactform {
+            animation: slideInFromTop 1s ease-in-out;
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="aboutform">
+            <h2>About</h2>
+            <p>I'm Ali Murtaza, a passionate individual with a keen interest in artificial intelligence (AI). 
+                Eager to explore opportunities in the dynamic field of database management, I bring a solid 
+                foundation in database concepts and a proven academic track record scoring 921/1100 in matric 
+                and 922/1100 in intermediate examinations. My enthusiasm for AI drives my ambition to apply my 
+                skills and knowledge to innovative projects. With experience as a Teaching Assistant, I am 
+                committed to continuous learning and professional development in the realm of AI.</p>
+        </form>
+
+        <form id="projectsform">
+            <h2>Projects</h2>
+            <p>Description: Developed a Sewerage Defect Detection Model that can detect upto 10 types of defects in the 
+                underground Sewerage System
+                Technologies: Python, ResberryPi, Yolo
+                Key Skills: Pyhton, Tkinter, PyQt5 </p>
+        </form>
+
+        <form id="contactform">
+            <h2>Contact</h2>
+            <p>f201118@cfd.nu.edu.pk</p>
+        </form>
+        <button class="back-button">Back</button>
+    </div>
+
+
+    <script>
+        const button = document.querySelector('.back-button');
+
+        button.addEventListener('click', function () {
+            document.body.classList.add('fade-out');
+            setTimeout(function () {
+                window.history.back(); 
+            }, 1000);
+        });
+
+    </script>
+</body>
+
+</html>
